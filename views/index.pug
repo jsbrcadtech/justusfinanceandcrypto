@@ -1,0 +1,44 @@
+extends layout
+
+block layout-content
+    section.section.w3-section.w3-center
+      h2.page__title Trending Coins
+      div.table-container#table-container__homepage.w3-responsive
+        table.w3-table-all.w3-centered.w3-hoverable
+            tr
+              th Coin
+              th Symbol
+              th Price in USD
+              th Market Cap
+              th Max Supply
+              th Total Supply
+              th Circulating Supply
+
+            each coin in cryptoData
+              tr
+                td 
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{coin.name}
+                td
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{coin.symbol}
+                td 
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{numeral(coin.priceQuote).format('$0,0.00')}
+                td 
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{numeral(coin.marketCapQuote).format('$0,0.00')}
+                td
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{numeral(coin.maxSupply).format('0,0')}
+                td
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{numeral(coin.totalSupply).format('0,0')}
+                td
+                  a(target='_blank' href=`https://coinmarketcap.com/currencies/${coin.name.toLowerCase()}/`) #{numeral(coin.circulatingSupply).format('0,0')}
+      
+      div.w3-center
+        p.disclaimer Market Listed Crypto Information provided by:
+        a(target='_blank' href='currencies')
+          img(alt='CoinMarketCap-logo' width='300' height='150' src="https://vectorlogoseek.com/wp-content/uploads/2018/12/coinmarketcap-vector-logo.png")     
+      
+
+
+
+
+
+

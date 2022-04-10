@@ -1,0 +1,35 @@
+block variables
+doctype
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width")
+    title #{title} | Justus Finance & Crypto
+    link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
+    link(rel="stylesheet", type="text/css", href="/css/styles.css")
+    link(rel="stylesheet" media="screen and (max-width:450px)" href="/css/phone.css")
+    script(src="https://kit.fontawesome.com/3fd7ea09a2.js" crossorigin="anonymous")
+  body
+      header.page-header
+        nav#nav-container
+          a#page-header__top-home-btn(href="/") Home Page
+            i.fa.fa-home.w3-padding
+          a#site-logo(href='/')
+            img(alt='Justus Santanna Crypto & Finance Logo' width='220px' src='/images/justus-finance.png')
+          a#page-header__top-home-btn(href="/events") Crypto Events
+            i.fab.fa-btc.w3-padding
+
+
+      block layout-content
+      footer.w3-container.w3-center
+        ul#footer__social-media-links
+          li.social-media-links__items
+            a(href="/")
+              i.fab.fa-facebook-square
+          li.social-media-links__items
+            a(href="/")
+              i.fab.fa-twitter-square
+          li.social-media-links__items
+            a(href="/")
+              i.fab.fa-linkedin-in
+        p Justus Santanna Crypto Project &copy; 2022

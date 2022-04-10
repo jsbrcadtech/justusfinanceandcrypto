@@ -1,0 +1,17 @@
+a{
+    font-size: 0.8em;
+}
+#nav-container {
+    display: flex;
+    font-size: 1.4em;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.table-container{
+    display: flex;
+}
+    
+
