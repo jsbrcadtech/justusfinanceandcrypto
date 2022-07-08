@@ -2,11 +2,15 @@ const cryptoService = require('../services/CryptoService');
 const Crypto = require('../models/Crypto');
 const Event = require('../models/Event');
 
-// Endpoints to get trending crypto currency data from Coin Marcap 
+// Endpoints to get trending crypto currency data from Coin Marcap
 
 async function getCryptos() {
-  let cryptoMap = await cryptoService.loadData('v1/cryptocurrency/map?limit=300');
-  let cryptoLatest = await cryptoService.loadData('v1/cryptocurrency/listings/latest');
+  let cryptoMap = await cryptoService.loadData(
+    'v1/cryptocurrency/map?limit=300'
+  );
+  let cryptoLatest = await cryptoService.loadData(
+    'v1/cryptocurrency/listings/latest'
+  );
   // console.log(cryptoMap);
   // console.log(cryptoLatest);
 
@@ -23,24 +27,26 @@ async function getCryptos() {
         crypto.id = cryptoMapObj.id;
         crypto.name = cryptoLatestObj.name;
         crypto.symbol = cryptoLatestObj.symbol;
-        crypto.maxSupply = cryptoLatestObj.max_supply;
         crypto.circulatingSupply = cryptoLatestObj.circulating_supply;
         crypto.totalSupply = cryptoLatestObj.total_supply;
         crypto.priceQuote = cryptoLatestObj.quote['USD'].price;
-        crypto.marketCapQuote = cryptoLatestObj.quote['USD'].market_cap
+        crypto.marketCapQuote = cryptoLatestObj.quote['USD'].market_cap;
+        crypto.maxSupply = cryptoLatestObj.max_supply;
 
         cryptoList.push(crypto);
       }
     }
   }
-  console.log(cryptoList)
+  console.log(cryptoList);
 
   return cryptoList;
 }
 
-// Endpoint to get significant crypto events from Coin Market CAL 
+// Endpoint to get significant crypto events from Coin Market CAL
 async function getCryptoEvents() {
-  let cryptoEvents = await cryptoService.loadEventsData('v1/events?sortBy=significant_events');
+  let cryptoEvents = await cryptoService.loadEventsData(
+    'v1/events?sortBy=significant_events'
+  );
 
   let cryptoEventsList = [];
   for (let i = 0; i < cryptoEvents.body.length; i++) {
@@ -59,5 +65,3 @@ async function getCryptoEvents() {
 
 module.exports.getCryptos = getCryptos;
 module.exports.getCryptoEvents = getCryptoEvents;
-
-

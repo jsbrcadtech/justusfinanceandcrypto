@@ -13,16 +13,17 @@ block layout-content
             each cryptoEvent in eventsData
               tr
                 td 
-                  a(target='_blank' href=`https://www.coingecko.com/en/coins/${cryptoEvent.coins[0].name.toLowerCase()}/`) #{cryptoEvent.title['en']}
+                  a(target='_blank' href=`https://www.coingecko.com/en/coins`) #{cryptoEvent.title['en']}
                 td 
-                  a(target='_blank' href=`https://www.coingecko.com/en/coins/${cryptoEvent.coins[0].name.toLowerCase()}/`) #{moment(cryptoEvent.dateEvent).format('YYYY-MM-DD')}
+                  a(target='_blank' href=`https://www.coingecko.com/en/coins`) #{moment(cryptoEvent.dateEvent).format('YYYY-MM-DD')}
                 td 
-                  a(target='_blank' href=`https://www.coingecko.com/en/coins/${cryptoEvent.coins[0].name.toLowerCase()}/`) #{cryptoEvent.coins[0].symbol}
+                  a(target='_blank' href=`https://www.coingecko.com/en/coins`) #{cryptoEvent.coins[0].symbol}
                 td 
-                  a(target='_blank' href=`https://www.coingecko.com/en/coins/${cryptoEvent.coins[0].name.toLowerCase()}/`) #{cryptoEvent.coins[0].name}
+                  a(target='_blank' href=`https://www.coingecko.com/en/coins`) #{cryptoEvent.coins[0].name}
       div.w3-center
         p.disclaimer 1. Some of the projects listed are new and may not be market listed yet. 
         p.disclaimer Market Listed Crypto Information provided by:
         a(target='_blank' href='https://www.coingecko.com')
           img(alt='CoinGetcko Logo' width='140' height='39' src="https://static.coingecko.com/s/coingecko-logo-63f24b60e1d2d526c141fee733ad2a39fbce7dabedd187a0dba95220396ce9a0.png")     
             
+      
